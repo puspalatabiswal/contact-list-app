@@ -31,7 +31,7 @@ app.controller("myContactController", ["$scope","$http", function($scope, $http)
 	$scope.updateContact= function(){
 		$http.put("/updateContact/" + $scope.contact._id , $scope.contact)
 			.then(function(response){
-				refresh();
+
 			})
 	}
 

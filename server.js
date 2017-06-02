@@ -21,6 +21,8 @@ router.get("/", function(request, response){
 	response.json("This is MEAN tack app")
 })
 
+//get all the details 
+
 router.get("/getContacts", function(request, response){
 	Contact.getContacts(function(err, contactObj){
 		if(err){
@@ -29,6 +31,9 @@ router.get("/getContacts", function(request, response){
 		response.json(contactObj)
 	})
 })
+
+
+//get the  details by specific id
 
 router.get("/getContactById/:id", function(request, response){
 	var contactId = request.params.id;
@@ -39,6 +44,9 @@ router.get("/getContactById/:id", function(request, response){
 		response.json(contactObj);
 	})
 })
+
+
+//insert data
 
 router.post("/createContact", function(request, response){
 	var contactObj = request.body;
@@ -51,6 +59,9 @@ router.post("/createContact", function(request, response){
 	})
 })
 
+
+//for modification 
+
 router.put("/updateContact/:id", function(request, response){
 	var contactId = request.params.id;
 	var contactObj = request.body;
@@ -62,6 +73,8 @@ router.put("/updateContact/:id", function(request, response){
 		response.json(contactObj);
 	})
 })
+
+//delete data
 
 router.delete("/removeContact/:id", function(request, response){
 	var contactId = request.params.id;

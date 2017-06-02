@@ -33,7 +33,7 @@ module.exports.updateContact = function(contactId, contactObj, callback){
 	return Contact.update({_id : contactId},
 						  {$set: {
 						  	name : contactObj.name,
-						  	email : contactObj.email,
+						ss  	email : contactObj.email,
 						  	mobile : contactObj.mobile
 						  }},
 						   callback)
